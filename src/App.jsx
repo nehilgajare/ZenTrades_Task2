@@ -87,7 +87,7 @@ function App() {
 
 
   return (
-    <div className="container mx-auto my-8">
+    <div className="container mx-auto my-8 bg-slate-500 p-8">
       <div className="mb-4">
         <h1 className="text-2xl font-bold">Product Data</h1>
       </div>
@@ -118,7 +118,7 @@ function App() {
       </div>
 
 
-      {file && (
+      
         <div className="flex mb-4">
           <div className="w-1/2">
             <h2 className="text-lg font-semibold mb-2">Available Fields</h2>
@@ -181,7 +181,7 @@ function App() {
             </select>
           </div>
         </div>
-      )}
+      
 
       {products.length > 0 && (
         <table className="w-full border">
