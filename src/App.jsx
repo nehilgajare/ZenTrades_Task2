@@ -56,6 +56,7 @@ function App() {
       const newDisplayFields = displayFields.filter(
         (field) => !selectedFields.includes(field)
       );
+      console.log(newDisplayFields);
       setDisplayFields(newDisplayFields);
       setAvailableFields(
         Array.from(new Set([...availableFields, ...selectedFields])) 
@@ -92,7 +93,7 @@ function App() {
         <h1 className="text-2xl font-bold">Product Data</h1>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 text-black">
         Step 1:-
         <input
           type="file"
@@ -101,16 +102,16 @@ function App() {
           className="mb-2"
         />
       </div>
-      <div className='mb-4 mt-4'>
+      <div className='mb-4 mt-4 text-black'>
         <p>Step 2:- Specify Format</p> 
         <div className='mt-2'>
-        <p className='mt-2'>File Format</p>
+        <p className='mt-2 '>File Format</p>
         <select>
           <option>JSON</option>
           <option>CSV</option>
         </select>
         </div>
-        <p className='mt-2'>Character Encoding</p>
+        <p className='mt-2 '>Character Encoding</p>
         <select>
           <option>UTF-8</option>
           <option>ASCII</option>
@@ -124,7 +125,7 @@ function App() {
             <h2 className="text-lg font-semibold mb-2">Available Fields</h2>
             <select
               multiple
-              className="w-full h-40 p-2 border"
+              className="w-full h-40 text-black p-2 border"
               value={availableFields}
               onChange={(e) =>
                 setAvailableFields(
@@ -145,13 +146,13 @@ function App() {
 
           <div className="w-1/2 flex flex-col items-center justify-center">
             <button
-              className="mb-2 px-4 py-2 bg-blue-500 text-white"
+              className="mb-2 rounded px-4 py-2 bg-blue-300 text-black"
               onClick={() => handleDisplayChange(availableFields, 'add')}
             >
               {'>>'}
             </button>
             <button
-              className="px-4 py-2 bg-blue-500 text-white"
+              className="px-4 rounded py-2 bg-blue-300 text-black"
               onClick={() => handleDisplayChange(displayFields, 'remove')}
             >
               {'<<'}
@@ -162,7 +163,7 @@ function App() {
             <h2 className="text-lg font-semibold mb-2">Fields to Display</h2>
             <select
               multiple
-              className="w-full h-40 p-2 border"
+              className="w-full h-40 text-black p-2 border"
               value={displayFields}
               onChange={(e) =>
                 setDisplayFields(
